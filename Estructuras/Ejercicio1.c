@@ -8,27 +8,28 @@ struct Alumno {
 };
 
 int main() {
-    struct Alumno a1 = {"Maria Diaz", 16, 5};
 
-    printf("Datos Iniciales del alumno\n");
+    struct Alumno a1 = {"Lucas Gomez", 16, 5};
+
+    printf("Datos Iniciales: \n");
     printf("Nombre: %s\n", a1.nombre);
-    printf("Edad: %d años\n", a1.edad);
-    printf("Año que cursa: %d\n", a1.año);
+    printf("Edad: %d\n", a1.edad);
+    printf("Anio: %d\n\n", a1.año);
 
-    printf("\nModificar Datos:\n");
-    printf("Ingrese el nuevo nombre: ");
-    scanf(" %[^\n]", a1.nombre);
+    printf("Datos Modificados: \n");
+    printf("Ingrese nuevo nombre: ");
+    fgets(a1.nombre, sizeof(a1.nombre), stdin);
+    a1.nombre[strcspn(a1.nombre, "\n")] = '\0';
 
-    printf("Ingrese la nueva edad: ");
+    printf("Ingrese nueva edad: ");
     scanf("%d", &a1.edad);
 
-    printf("Ingrese el nuevo año: ");
+    printf("Ingrese nuevo año: ");
     scanf("%d", &a1.año);
 
-    printf("\nDatos ya Modificados:\n");
+    printf("\nDatos Nuevos: \n");
     printf("Nombre: %s\n", a1.nombre);
-    printf("Edad: %d anios\n", a1.edad);
-    printf("Año que cursa: %d\n", a1.año);
+    printf("Edad: %d\n", a1.edad);
+    printf("Anio: %d\n", a1.anio);
 
     return 0;
-}
